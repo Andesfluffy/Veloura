@@ -1,210 +1,148 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 
+const navLinks = ["Create Your Rules", "Execute and Control", "Enjoy and Customize"];
+
+const stats = [
+  { value: "12k+", label: "Members Liberated" },
+  { value: "47", label: "Countries Activated" },
+  { value: "92%", label: "Launch Success Rate" },
+];
+
+const pillarCopy = [
+  "Mentorship from founders who've scaled globally.",
+  "Automation blueprints to reclaim time and location freedom.",
+  "Story frameworks that turn your journey into magnetic influence.",
+];
+
 export function HeroSection() {
   return (
-    <div className="fixed inset-0 z-50 bg-[#080808] overflow-hidden">
-      {/* Professional background effects */}
-      <div className="absolute inset-0 bg-[url('/textures/noise.png')] opacity-[0.04] mix-blend-overlay" />
-      <div className="absolute inset-0 bg-[url('/shapes/geometric-grid.svg')] bg-center bg-[length:32px_32px] opacity-[0.07]" />
-      <div 
-        className="absolute right-[-20%] top-[-20%] h-[1200px] w-[1200px] rounded-full"
-        style={{
-          background: "radial-gradient(circle at center, rgba(233,211,180,0.08) 0%, rgba(233,211,180,0) 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div 
-        className="absolute left-[-10%] bottom-[-10%] h-[800px] w-[800px] rounded-full"
-        style={{
-          background: "radial-gradient(circle at center, rgba(16,185,129,0.06) 0%, rgba(16,185,129,0) 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/20 via-[#080808]/90 to-[#080808]" />
+    <section className="relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-[#0b0806] text-[#f8ead4]">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(255,215,160,0.24),transparent_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_12%,rgba(155,106,52,0.18),transparent_68%)]" />
+        <div className="absolute inset-0 bg-[conic-gradient(at_50%_140%,rgba(255,201,120,0.38),rgba(18,11,4,0.92)_60%,rgba(255,201,120,0.2)_92%)] opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0d0906] via-[#15100c] to-[#070503]" />
+        <div className="absolute inset-0 bg-[url('/textures/noise.png')] opacity-20 mix-blend-soft-light" />
+      </div>
 
-      {/* Content */}
-      <Container className="relative h-screen py-4 flex items-center">
-        <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] items-center max-h-full">
-          {/* Left column - Main content */}
-          <div className="space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-8"
-            >
-              <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="inline-block"
-                >
-                  <span className="inline-block py-1 px-3 text-xs tracking-wider uppercase rounded-full bg-emerald-950/60 text-emerald-300/90 border border-emerald-800/40">
-                    Premium Digital Education
-                  </span>
-                </motion.div>
-                <h1 className="font-serif text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl tracking-tight">
-                  <span 
-                    className="block bg-gradient-to-r from-[#E6D5B8] via-[#F1E6D1] to-[#E6D5B8] bg-clip-text text-transparent"
-                    style={{
-                      textShadow: "0 0 80px rgba(233,211,180,0.15)"
-                    }}
-                  >
-                    Digital Freedom
-                  </span>
-                  <span 
-                    className="block mt-2 bg-gradient-to-r from-emerald-300 via-emerald-200 to-emerald-300 bg-clip-text text-transparent"
-                    style={{
-                      textShadow: "0 0 80px rgba(16,185,129,0.15)"
-                    }}
-                  >
-                    Blueprint
-                  </span>
-                </h1>
-              </div>
-              <p className="text-xl md:text-2xl text-[#E6D5B8]/70 max-w-xl leading-relaxed">
-                Master the modern digital economy. Build a sustainable online business. Create the lifestyle you deserve.
+      <Container className="relative z-10 flex h-dvh min-h-[720px] w-full flex-col px-6 pb-10 pt-8 sm:px-10">
+        <header className="flex items-center justify-between text-[0.68rem] font-semibold uppercase tracking-[0.55em] text-[#f3d8b0]/70">
+          <span className="flex items-center gap-2 text-[#f8ead4]/85">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[#f3d8b0]/20 bg-[#15100c]/80 font-serif text-[0.65rem]">
+              V
+            </span>
+            Veloura
+          </span>
+          <nav className="hidden gap-8 text-[0.6rem] tracking-[0.48em] text-[#f3d8b0]/60 sm:flex">
+            {navLinks.map((link) => (
+              <span key={link} className="uppercase">
+                {link}
+              </span>
+            ))}
+          </nav>
+        </header>
+
+        <main className="flex flex-1 items-center justify-center">
+          <div className="relative flex w-full max-w-6xl flex-col items-center gap-12 rounded-[44px] border border-[#f6d8aa]/10 bg-[rgba(16,12,8,0.72)] px-8 pb-14 pt-12 shadow-[0_40px_140px_rgba(0,0,0,0.65)] backdrop-blur-[26px] sm:px-14">
+            <div className="pointer-events-none absolute -top-48 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,204,140,0.5),transparent_70%)] blur-[120px]" />
+            <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(121,78,35,0.55),transparent_72%)] blur-[120px]" />
+
+            <div className="flex w-full flex-col items-center gap-8 text-center">
+              <span className="text-[0.62rem] font-semibold uppercase tracking-[0.6em] text-[#f6d8aa]/80">
+                Veloura · Digital Freedom Blueprint
+              </span>
+              <h1 className="max-w-3xl font-serif text-4xl leading-[1.05] text-[#fdf3e4] sm:text-5xl md:text-6xl">
+                Build a sovereign digital business that works anywhere you do
+              </h1>
+              <p className="max-w-2xl text-sm text-[#f5e3c7]/70 sm:text-base">
+                Veloura is the molten-gold pathway for entrepreneurs determined to replace ordinary careers with flexible, high-impact digital ventures. We fuse elite mentorship, automation, and narrative mastery so you can grow wealth on your own terms.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  onClick={() => window.location.href = '/apply'}
-                  variant="primary"
-                  size="lg"
-                  className="min-w-[200px] bg-gradient-to-r from-[#E6D5B8] via-[#F1E6D1] to-[#E6D5B8] hover:opacity-90 text-black font-medium"
-                >
-                  Start Your Journey
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  onClick={() => window.location.href = '/how-it-works'}
-                  variant="secondary"
-                  size="lg"
-                  className="min-w-[200px] border border-[#E6D5B8]/20 hover:border-[#E6D5B8]/40 bg-[#E6D5B8]/5"
-                >
-                  Explore the Blueprint
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            {/* Key features */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="pt-16"
-            >
-              <div className="grid grid-cols-3 gap-8">
-                {[
-                  { label: "Expert Mentors", value: "100+" },
-                  { label: "Success Rate", value: "85%" },
-                  { label: "Member Revenue", value: "$50M+" },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
-                    className="relative group"
-                  >
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E6D5B8]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative p-6 rounded-2xl border border-[#E6D5B8]/10 bg-gradient-to-br from-[#E6D5B8]/[0.03] to-transparent backdrop-blur-sm">
-                      <div className="font-serif text-3xl bg-gradient-to-r from-[#E6D5B8] to-[#F1E6D1] bg-clip-text text-transparent">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-[#E6D5B8]/60 mt-2 tracking-wide">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+            <div className="grid w-full gap-10 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-center">
+              <div className="hidden origin-center -rotate-90 items-center gap-2 text-[0.58rem] font-semibold uppercase tracking-[0.58em] text-[#f3d8b0]/60 lg:flex">
+                Unlock creative intelligence
               </div>
-            </motion.div>
-          </div>
 
-          {/* Right column - Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative aspect-square"
-          >
-            <div className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-br from-[#080808] to-black border border-[#E6D5B8]/[0.03]">
-              <div className="absolute inset-0 bg-[url('/textures/lava-gold.png')] bg-cover opacity-20 mix-blend-overlay" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-              
-              {/* Premium design elements */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="relative h-full w-full"
-              >
-                {/* Geometric patterns */}
-                <div className="absolute top-[10%] right-[10%] w-32 h-32 rounded-full border border-[#E6D5B8]/10" />
-                <div className="absolute top-[8%] right-[8%] w-40 h-40 rounded-full border border-[#E6D5B8]/[0.06]" />
-                <div className="absolute bottom-[15%] left-[10%] w-24 h-24 rounded-full border border-emerald-500/10" />
-                
-                {/* Premium elements */}
-                <motion.div
-                  animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 2, 0]
-                  }}
-                  transition={{ 
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2"
-                >
-                  <div className="relative w-48 h-48 rounded-2xl bg-gradient-to-br from-[#E6D5B8]/[0.08] to-transparent backdrop-blur-sm border border-[#E6D5B8]/10">
-                    <div className="absolute inset-0 bg-noise opacity-20" />
-                    <div className="relative h-full w-full p-8 flex items-center justify-center">
-                      <div className="w-full h-full rounded-xl bg-gradient-to-br from-[#E6D5B8]/[0.08] to-transparent flex items-center justify-center">
-                        <span className="text-6xl filter drop-shadow-[0_0_10px_rgba(233,211,180,0.2)]">✨</span>
+              <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[34px] border border-[#f5e3c7]/25 bg-gradient-to-br from-[#f7e9d6] via-[#f0dfc8] to-[#f9e8d4] shadow-[0_36px_120px_rgba(15,10,6,0.45)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_32%,rgba(210,148,94,0.4),transparent_52%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_26%,rgba(146,97,56,0.3),transparent_62%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.2),transparent)]" />
+
+                  <div className="absolute inset-x-0 top-0 flex items-center justify-between px-10 py-6 text-[0.58rem] uppercase tracking-[0.5em] text-[#4c3320]/70">
+                    <span>Veloura Studio</span>
+                    <div className="flex gap-6 text-[#9b6a34]/70">
+                      {navLinks.map((link) => (
+                        <span key={link}>{link}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-10 grid grid-cols-2 gap-6">
+                    <div className="flex flex-col justify-between">
+                      <div>
+                        <p className="text-[0.7rem] uppercase tracking-[0.45em] text-[#9b6a34]/75">Signature Systems</p>
+                        <p className="mt-4 max-w-xs text-sm font-medium text-[#3d2818]">
+                          Veloura redefines digital workflows, empowering you to scale premium offers, protect what matters, and unlock your revenue potential.
+                        </p>
+                      </div>
+                      <p className="text-[0.68rem] uppercase tracking-[0.48em] text-[#aa7944]/70">Guided Launch Pods</p>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                      <div className="relative h-32 w-32 rounded-full bg-gradient-to-br from-[#fbe6cf] via-[#d7a56d] to-[#9b6538] shadow-[0_18px_45px_rgba(90,60,30,0.45)]">
+                        <div className="absolute inset-6 rounded-full bg-gradient-to-br from-[#f6d2a2] via-[#b7783f] to-[#2f1708] opacity-80" />
+                      </div>
+                      <div className="absolute inset-0">
+                        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#d8ba94]/50" />
+                        <div className="absolute top-1/2 h-px w-full -translate-y-1/2 bg-[#d8ba94]/50" />
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              </motion.div>
-            </div>
-          </motion.div>
-                </motion.div>
                 </div>
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-1/3 right-1/3 translate-x-1/2 translate-y-1/2"
-              >
-                <div className="relative w-32 h-32 rounded-xl bg-gradient-to-br from-gold-500/10 to-gold-500/5 backdrop-blur-xl border border-gold-500/10 p-6 flex items-center justify-center">
-                  <span className="text-4xl">✨</span>
-                </div>
-              </motion.div>
+                <div className="mt-4 h-2 w-[82%] rounded-full bg-gradient-to-r from-[#2b1d12] via-[#3d2a18] to-[#1c130c] shadow-[0_12px_30px_rgba(0,0,0,0.6)]" />
+              </div>
+
+              <div className="flex flex-col gap-5 text-left text-sm text-[#f5e3c7]/80">
+                {pillarCopy.map((copy) => (
+                  <p key={copy}>{copy}</p>
+                ))}
+              </div>
             </div>
-          </motion.div>
-        </div>
+
+            <div className="flex w-full flex-col items-center gap-8">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                <Button
+                  onClick={() => (window.location.href = "/apply")}
+                  size="lg"
+                  className="min-w-[220px] border border-[#f6d8aa]/30 bg-[#f0c884] text-[#1b120a] shadow-[0_24px_80px_rgba(248,201,120,0.45)] hover:bg-[#ffd9a1]"
+                >
+                  Start Your Freedom Studio
+                </Button>
+                <Button
+                  onClick={() => (window.location.href = "/experience")}
+                  variant="secondary"
+                  size="lg"
+                  className="min-w-[220px] border border-[#f6d8aa]/30 bg-transparent text-[#f6d8aa]/80 hover:bg-[#f6d8aa]/10"
+                >
+                  Explore the Blueprint
+                </Button>
+              </div>
+
+              <div className="grid gap-6 text-center sm:grid-cols-3">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="flex flex-col items-center gap-2">
+                    <span className="text-3xl font-semibold text-[#fbd49a]">{stat.value}</span>
+                    <p className="text-[0.58rem] uppercase tracking-[0.52em] text-[#f5e3c7]/55">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
       </Container>
     </section>
   );
