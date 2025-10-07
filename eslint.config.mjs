@@ -20,6 +20,12 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      "no-console": ["warn", { allow: ["info", "warn", "error"] }],
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
