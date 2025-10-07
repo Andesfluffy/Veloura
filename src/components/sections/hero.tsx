@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="fixed inset-0 z-50 flex items-center bg-[#080808] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#080808] overflow-hidden">
       {/* Professional background effects */}
       <div className="absolute inset-0 bg-[url('/textures/noise.png')] opacity-[0.04] mix-blend-overlay" />
       <div className="absolute inset-0 bg-[url('/shapes/geometric-grid.svg')] bg-center bg-[length:32px_32px] opacity-[0.07]" />
@@ -185,6 +185,10 @@ export function HeroSection() {
                       </div>
                     </div>
                   </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
                 </motion.div>
                 </div>
               </motion.div>
